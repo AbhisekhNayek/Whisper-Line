@@ -1,7 +1,7 @@
 "use client";
 
-import { signIn } from "next-auth/react";
-import { useState } from "react";
+import { signIn, getSession } from "next-auth/react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -27,7 +27,12 @@ export default function SignIn() {
       if (result?.error) {
         setError("Invalid credentials");
       } else {
-        router.push("/dashboard");
+        const session = await getSession();
+        if (session?.user?.role === "ADMIN") {
+          router.push("/dashboard");
+        } else if (session?.user?.role === "USER") {
+          router.push("/user");
+        }
       }
     } catch (error) {
       setError("An error occurred during sign in");
