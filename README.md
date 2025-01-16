@@ -62,8 +62,8 @@ Ensure you have the following tools installed:
 
 1. **Clone the Repository**  
    ```bash
-   git clone WhisperLine
-   cd WhisperLine
+   git clone "https://github.com/AbhisekhNayek/Whisper-Line"
+   cd Whisper-Line
    ```
 
 2. **Install Dependencies**  
