@@ -1,4 +1,12 @@
-import { ReportWizard } from "@/components/report/ReportWizard";
+'use client'
+
+import dynamic from 'next/dynamic'
+
+// Dynamically import ReportWizard with SSR disabled
+const ReportWizard = dynamic(
+  () => import('@/components/report/ReportWizard').then(mod => mod.ReportWizard),
+  { ssr: false }
+)
 
 export default function SubmitReport() {
   return (
@@ -45,5 +53,5 @@ export default function SubmitReport() {
         </div>
       </main>
     </div>
-  );
+  )
 }
