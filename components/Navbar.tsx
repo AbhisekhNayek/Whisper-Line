@@ -35,7 +35,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Main Navigation */}
+            {/* Main Navigation - Desktop */}
             <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
               <Link
                 href="/submit-report"
@@ -69,10 +69,11 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Emergency Button */}
-            <div className="flex items-center space-x-4">
-              <button className="group flex h-9 items-center gap-2 rounded-full bg-red-500/10 pl-4 pr-5 text-sm font-medium text-red-500 ring-1 ring-inset ring-red-500/20 transition-all hover:bg-red-500/20 md:h-10 md:pl-6 md:pr-7 md:text-base">
-                <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" />
+            {/* Emergency + Auth + Mobile Menu */}
+            <div className="flex items-center space-x-3 md:space-x-4">
+              {/* Emergency Button */}
+              <button className="flex items-center space-x-2 rounded-full bg-red-500/10 px-4 py-1.5 text-sm font-medium text-red-500 ring-1 ring-inset ring-red-500/20 transition-all hover:bg-red-500/20 md:px-6 md:py-2">
+                <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
                 <span className="hidden sm:inline">Emergency</span>
               </button>
 
@@ -83,7 +84,6 @@ export default function Navbar() {
               >
                 Sign In
               </Link>
-
 
               {/* Mobile Menu Button */}
               <button
@@ -109,7 +109,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Component */}
       <MobileMenu
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
