@@ -12,12 +12,12 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     <div className="fixed inset-0 z-50 md:hidden">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-gradient-to-br from-black/70 to-gray-800/60 backdrop-blur-md"
+        className="fixed inset-0 bg-gradient-to-br from-black/70 to-green-900/60 backdrop-blur-md"
         onClick={onClose}
       />
 
       {/* Menu content */}
-      <div className="fixed right-0 top-0 h-full w-64 bg-gradient-to-b from-blue-800 to-purple-800 p-6 shadow-xl">
+      <div className="fixed right-0 top-0 h-full w-64 bg-gradient-to-br from-green-400 to-green-600 p-6 shadow-xl">
         <div className="flex flex-col space-y-6">
           {/* Close Button */}
           <div className="flex justify-end">
