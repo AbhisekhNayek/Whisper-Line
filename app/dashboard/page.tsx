@@ -87,7 +87,7 @@ export default function Dashboard() {
                 {session?.user?.name || "Admin"}
               </span>
               <button
-                onClick={() => signOut({ callbackUrl: "/login" })}
+                onClick={() => signOut({ callbackUrl: "https://whisper-line.onrender.com/auth/signin" })}
                 className="px-4 py-2 text-sm font-medium bg-green-600 hover:bg-green-700 rounded-full text-white shadow-lg transition-all"
               >
                 Sign out
