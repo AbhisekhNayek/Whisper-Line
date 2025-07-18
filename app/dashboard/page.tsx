@@ -87,7 +87,7 @@ export default function Dashboard() {
                 {session?.user?.name || "Admin"}
               </span>
               <button
-                onClick={() => signOut()}
+                onClick={() => signOut({ callbackUrl: "/login" })}
                 className="px-4 py-2 text-sm font-medium bg-green-600 hover:bg-green-700 rounded-full text-white shadow-lg transition-all"
               >
                 Sign out
@@ -131,9 +131,7 @@ export default function Dashboard() {
             </select>
           </div>
 
-          <div className="text-green-300">
-            {filteredReports.length} Reports
-          </div>
+          <div className="text-green-300">{filteredReports.length} Reports</div>
         </div>
 
         <div className="grid gap-4">
@@ -178,10 +176,7 @@ export default function Dashboard() {
                 <select
                   value={report.status}
                   onChange={(e) =>
-                    updateReportStatus(
-                      report.id,
-                      e.target.value as ReportStatus
-                    )
+                    updateReportStatus(report.id, e.target.value as ReportStatus)
                   }
                   className="bg-black border border-green-500/20 text-green-300 rounded-lg px-4 py-2 focus:ring-green-500 focus:border-green-500"
                 >
